@@ -1,0 +1,43 @@
+# Apache (Timeweb shared hosting): SPA routing + cache policy.
+# Route copies (/catalog/, /product/<slug>/, /policy/, /cart/) are real
+# directories, so they answer 200 without a rewrite. Anything else gets the
+# SPA shell with a real 404 status and the client-side NotFound page.
+
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ - [R=404,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 week"
+</IfModule>

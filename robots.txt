@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /cart
 
-Sitemap: https://htsgladiatis.github.io/sitemap.xml
+Sitemap: https://algastan.com/sitemap.xml
