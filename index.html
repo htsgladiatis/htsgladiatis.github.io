@@ -1,79 +1,345 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Алгастан. Биогель из бурых водорослей</title>
-    <meta
-      name="description"
-      content="Биогель АЛЬГАСТАН® из бурых морских водорослей (ламинария и фукус). Состав, способ применения, хранение и доставка по России."
-    />
-    <link rel="canonical" href="https://algastan.com/" />
-    <meta name="theme-color" content="#F4F8F6" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>АЛЬГАСТАН® - биогель с ламинарией и фукусом</title>
+<meta name="description" content="Биогель АЛЬГАСТАН: йод, минералы, восстановление. Одна формула на три задачи. Ламинария и фукус, курс 40 суток.">
+<style>
+  @font-face{
+    font-family:"Golos Text";font-style:normal;font-weight:400 600;font-display:swap;
+    src:url("assets/fonts/golostext-400-cyrillic.woff2") format("woff2");
+    unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+  }
+  @font-face{
+    font-family:"Golos Text";font-style:normal;font-weight:400 600;font-display:swap;
+    src:url("assets/fonts/golostext-400-latin.woff2") format("woff2");
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+2000-206F,U+2122,U+2212;
+  }
+  @font-face{
+    font-family:"Lora";font-style:normal;font-weight:400;font-display:swap;
+    src:url("assets/fonts/lora-400-cyrillic.woff2") format("woff2");
+    unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+  }
+  @font-face{
+    font-family:"Lora";font-style:normal;font-weight:400;font-display:swap;
+    src:url("assets/fonts/lora-400-latin.woff2") format("woff2");
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+2000-206F,U+2212;
+  }
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Алгастан" />
-    <meta property="og:locale" content="ru_RU" />
-    <meta property="og:url" content="https://algastan.com/" />
-    <meta property="og:title" content="Алгастан. Биогель из бурых водорослей" />
-    <meta
-      property="og:description"
-      content="Биогель АЛЬГАСТАН® из бурых морских водорослей (ламинария и фукус). Состав, применение, хранение и доставка по России."
-    />
-    <meta property="og:image" content="https://algastan.com/og.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
+  :root{
+    --paper:#f4f8f7;
+    --ink:#16211d;
+    --ink-soft:rgba(22,33,29,.62);
+    --sea-green:#175349;
+    --light:rgba(247,251,252,.9);
 
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link
-      rel="preload"
-      href="/fonts/cormorant-cyrillic-600.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/montserrat-cyrillic-400.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    --ease:cubic-bezier(.23,1,.32,1);
+    --pad:clamp(20px,4.4vw,74px);
+    --max:1720px;
+  }
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Алгастан",
-        "alternateName": "ALGASTAN",
-        "url": "https://algastan.com/",
-        "logo": "https://algastan.com/favicon.svg",
-        "email": "test@example.com",
-        "telephone": "+7-900-000-00-00",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Хабаровск",
-          "addressCountry": "RU"
-        }
-      }
-    </script>
-    <script type="module" crossorigin src="/assets/index-CSD6ypJM.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/seo-DMu7GBGO.js">
-    <link rel="stylesheet" crossorigin href="/assets/style-D-m3tsrz.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <noscript>
-      <div style="max-width: 44rem; margin: 4rem auto; padding: 0 1.25rem; font-family: system-ui, sans-serif; color: #1c1917; line-height: 1.6">
-        <h1 style="font-size: 1.75rem; margin-bottom: 1rem">Алгастан</h1>
-        <p>
-          Для каталога и корзины нужен JavaScript. Включите его в браузере или
-          позвоните нам: <a href="tel:+79000000000">+7 (900) 000-00-00</a>,
-          ежедневно.
-        </p>
-      </div>
-    </noscript>
-  </body>
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Golos Text","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  }
+  :focus-visible{outline:2px solid var(--sea-green);outline-offset:4px}
+  ::selection{background:rgba(23,83,73,.16)}
+
+  /* =====================================================================
+     ONE FRAME. Both source screens are recomposed into a single canvas:
+     one text axis on the left, one photographic mass on the right,
+     one hairline and one depth scale binding them at the same altitude.
+     There is no second section and nothing to scroll to.
+     ===================================================================== */
+  .frame{
+    position:relative;
+    max-width:var(--max);
+    margin:0 auto;
+    min-height:100svh;
+    padding:clamp(18px,2.2vw,32px) var(--pad) clamp(20px,2.4vw,34px);
+    display:flex;flex-direction:column;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 8% 0%, #fbfdfc 0%, rgba(251,253,252,0) 62%),
+      radial-gradient(90% 70% at 100% 100%, #dfe8e8 0%, rgba(223,232,232,0) 58%),
+      var(--paper);
+  }
+
+  /* ---------------- the sea: one mass, no edges ---------------- */
+  .sea{
+    position:absolute;
+    bottom:0;right:0;
+    width:65%;
+    height:82%;
+    z-index:1;
+    object-fit:cover;object-position:62% 46%;
+    -webkit-mask-image:
+      linear-gradient(90deg,transparent 0,#000 30%),
+      linear-gradient(180deg,transparent 0,#000 24%);
+    mask-image:
+      linear-gradient(90deg,transparent 0,#000 30%),
+      linear-gradient(180deg,transparent 0,#000 24%);
+    -webkit-mask-composite:source-in;
+    mask-composite:intersect;
+    transform-origin:70% 60%;
+    animation:settle 1700ms var(--ease) 120ms both;
+    pointer-events:none;
+    user-select:none;
+  }
+  .grain{
+    position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.05;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>");
+  }
+
+  /* ---------------- header ---------------- */
+  .head{
+    position:relative;z-index:6;
+    display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+    padding-bottom:clamp(12px,1.6vw,20px);
+    border-bottom:1px solid rgba(22,33,29,.16);
+  }
+  .brand{
+    font-size:12.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .brand sup{font-size:.6em;letter-spacing:0;vertical-align:.62em;margin-left:.2em}
+  .head__meta{
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-soft);text-align:right;
+  }
+
+  /* ---------------- headline: the dominant mass ---------------- */
+  .headline{
+    position:relative;z-index:5;
+    margin:clamp(24px,6.4vh,74px) 0 0;
+    font-size:clamp(34px,4.85vw,78px);
+    font-weight:400;
+    line-height:1.03;
+    letter-spacing:-.028em;
+  }
+  .headline span{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
+  .headline i{
+    display:block;font-style:normal;white-space:nowrap;
+    transform:translateY(105%);
+    animation:rise 900ms var(--ease) forwards;
+    animation-delay:calc(var(--i) * 95ms + 80ms);
+  }
+  .headline em{
+    font-family:"Lora",Georgia,serif;
+    font-style:normal;
+    font-size:.955em;
+    letter-spacing:-.014em;
+  }
+
+  /* ---------------- footer: the second screen as a caption ---------------- */
+  .note{
+    position:relative;z-index:5;
+    margin-top:auto;
+    padding-top:clamp(16px,2.2vh,24px);
+    max-width:min(34em,42%);
+  }
+  .note::before{
+    content:"";position:absolute;left:0;right:calc(-1 * var(--pad));top:0;
+    height:1px;
+    background:linear-gradient(90deg,
+      rgba(22,33,29,.22) 0%,
+      rgba(22,33,29,.18) 24%,
+      rgba(255,255,255,.30) 52%,
+      rgba(255,255,255,.45) 100%);
+  }
+  .note__kicker{
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:clamp(8px,1.1vw,13px);
+    font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--sea-green);
+  }
+  .note__kicker::after{
+    content:"";height:1px;flex:0 0 26px;background:currentColor;opacity:.5;
+  }
+  .note__title{
+    margin:0 0 .62em;
+    max-width:16ch;
+    font-family:"Lora",Georgia,serif;font-weight:400;
+    font-size:clamp(23px,2.65vw,42px);
+    line-height:1.06;letter-spacing:-.015em;
+  }
+  .note__body{
+    margin:0;
+    max-width:33ch;
+    font-size:clamp(13px,.88vw,14.5px);
+    line-height:1.62;
+    color:var(--ink-soft);
+  }
+
+  /* ---------------- one scale for the whole frame ---------------- */
+  .scale{
+    position:absolute;z-index:4;
+    right:calc(var(--pad) * .58);
+    top:30%;bottom:5%;
+    width:54px;
+    display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;
+    font-size:10px;letter-spacing:.12em;font-variant-numeric:tabular-nums;
+    pointer-events:none;
+  }
+  .scale__cap{color:rgba(22,33,29,.55);padding-right:11px}
+  .scale__cap--low{color:rgba(247,251,252,.82)}
+  .scale__line{
+    position:absolute;right:0;top:16px;bottom:16px;width:1px;
+    background:linear-gradient(180deg,
+      rgba(22,33,29,.32) 0%,
+      rgba(22,33,29,.14) 26%,
+      rgba(255,255,255,.34) 52%,
+      rgba(255,255,255,.55) 100%);
+    transform:scaleY(0);transform-origin:top;
+    animation:draw 1400ms var(--ease) 260ms forwards;
+  }
+  .scale__tick{position:absolute;right:0;width:5px;height:1px;background:rgba(22,33,29,.22)}
+  .scale__tick:nth-of-type(1){top:25%}
+  .scale__tick:nth-of-type(2){top:50%;background:rgba(255,255,255,.36)}
+  .scale__tick:nth-of-type(3){top:75%;background:rgba(255,255,255,.44)}
+  .scale__dot{
+    position:absolute;right:-3px;top:78%;width:7px;height:7px;border-radius:50%;
+    background:rgba(247,251,252,.92);
+    box-shadow:0 0 0 4px rgba(23,83,73,.35);
+    opacity:0;transform:translateY(-12px);
+    animation:dot 620ms var(--ease) 900ms forwards;
+  }
+
+  @keyframes rise{to{transform:translateY(0)}}
+  @keyframes draw{to{transform:scaleY(1)}}
+  @keyframes dot{to{opacity:1;transform:translateY(0)}}
+  @keyframes settle{from{opacity:0;transform:scale(1.045)}to{opacity:1;transform:scale(1)}}
+
+  /* ---------------- narrow: same frame, recomposed ---------------- */
+  @media (max-width:900px){
+    .frame{
+      padding-inline:20px;
+      padding-bottom:max(20px,env(safe-area-inset-bottom));
+      min-height:100svh;
+    }
+    .head__meta{display:none}
+    .headline{
+      margin-top:clamp(22px,4.6vh,40px);
+      font-size:clamp(26px,7.9vw,42px);
+    }
+    .headline i{white-space:normal}
+    .headline em{font-size:.95em}
+    /* the sea is not a band under the text: it is the lower mass of the
+       same frame, bleeding to both edges and under the caption */
+    .sea{
+      top:auto;right:0;bottom:0;left:0;
+      width:100%;height:62svh;margin:0;
+      object-position:66% 50%;
+      -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 30%);
+      mask-image:linear-gradient(180deg,transparent 0,#000 30%);
+      -webkit-mask-composite:source-in;
+      mask-composite:intersect;
+      order:4;
+    }
+    .frame::after{
+      content:"";position:absolute;z-index:3;left:0;right:0;bottom:0;height:62svh;
+      background:linear-gradient(180deg,
+        rgba(9,26,28,0) 0%,
+        rgba(9,26,28,.30) 34%,
+        rgba(9,26,28,.78) 100%);
+      pointer-events:none;
+    }
+    .grain{z-index:4}
+    .note{
+      order:3;z-index:5;
+      margin-top:auto;
+      padding-top:16px;
+      max-width:calc(100% - 40px);
+      border-color:rgba(247,251,252,.24);
+    }
+    .note__title{
+      font-size:clamp(22px,6.4vw,32px);max-width:16ch;
+      color:rgba(247,251,252,.97);
+    }
+    .note__body{max-width:36ch;font-size:13.5px;color:rgba(240,247,247,.88)}
+    .note__kicker{display:none}
+    .note::before{
+      right:0;
+      background:linear-gradient(90deg,rgba(247,251,252,.34),rgba(247,251,252,.10));
+    }
+    .scale{top:40%;bottom:6%;right:16px;width:44px}
+    .scale__cap{color:rgba(22,33,29,.55)}
+    .scale__cap--low{color:rgba(247,251,252,.86)}
+  }
+  @media (min-width:601px) and (max-width:900px){
+    .headline{font-size:clamp(40px,6.5vw,50px)}
+    .sea,.frame::after{height:64svh}
+    .note{max-width:min(100%,540px)}
+    .note__body{max-width:34ch}
+  }
+  @media (max-width:900px) and (max-height:600px){
+    .headline{font-size:clamp(24px,5.4vw,34px)}
+    .note__title{font-size:clamp(20px,5vw,26px)}
+    .note__body{font-size:12.5px;line-height:1.5}
+    .sea,.frame::after{height:64svh}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;animation-delay:0ms !important;
+      animation-iteration-count:1 !important;transition-duration:.01ms !important;
+    }
+    .headline i{transform:none}
+    .scale__line{transform:scaleY(1)}
+    .scale__dot{opacity:1;transform:none}
+    .sea{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<main class="frame" id="biogel">
+  <video class="sea" autoplay muted loop playsinline preload="metadata" poster="assets/urchin-poster.jpg" aria-hidden="true" width="1920" height="1080">
+    <source src="assets/urchin.mp4" type="video/mp4">
+  </video>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="head">
+    <span class="brand">Альгастан<sup>®</sup></span>
+    <span class="head__meta">биогель · ламинария и фукус · 40 суток курса</span>
+  </header>
+
+  <h1 class="headline">
+    <span><i style="--i:0">Йод, минералы,</i></span>
+    <span><i style="--i:1">восстановление. Одна</i></span>
+    <span><i style="--i:2"><em>формула на три задачи.</em></i></span>
+  </h1>
+
+  <section class="note" aria-labelledby="note-title">
+    <span class="note__kicker">Море · среда</span>
+    <h2 class="note__title" id="note-title">Море делает половину работы</h2>
+    <p class="note__body">Ламинария и фукус набирают силу в холодной воде и на камне. Два месяца в году их добывают вручную, чтобы сырьё осталось живым.</p>
+  </section>
+
+  <div class="scale" aria-hidden="true">
+    <span class="scale__cap">0 М</span>
+    <span class="scale__line">
+      <span class="scale__tick"></span>
+      <span class="scale__tick"></span>
+      <span class="scale__tick"></span>
+      <span class="scale__dot"></span>
+    </span>
+    <span class="scale__cap scale__cap--low">40 М</span>
+  </div>
+</main>
+
+<script>
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var sea = document.querySelector('.sea');
+    sea.removeAttribute('autoplay');
+    sea.pause();
+  }
+</script>
+
+</body>
 </html>
